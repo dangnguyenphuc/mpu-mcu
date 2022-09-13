@@ -198,7 +198,7 @@ int main(void)
 //	int red_count = 0;
 //	int green_count = 0;
 //	int yellow_count = 0;
-  int timer = 0; //timer 1
+  int timer = 10; //timer 1
 //  int timer_2  = timer+5; //timer 2
 	//SET ALL Segments off
   HAL_GPIO_WritePin(PIN1_GPIO_Port, PIN1_Pin,SET);
@@ -211,12 +211,12 @@ int main(void)
 	//START LOOP
   while (1)
   {
-	  if(timer<10){
+	  if(timer>0){
 		  setled(timer);
-		  timer+=1;
+		  timer-=1;
 	  }
-	  if(timer>=10){
-		  timer = 0;
+	  if(timer=<0){
+		  timer = 10;
 	  }
 	  HAL_Delay(1000);
 //	  if(led_status==0){
