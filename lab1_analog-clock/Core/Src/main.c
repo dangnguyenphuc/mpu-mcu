@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include <time.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -61,6 +61,20 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+void setAllClock(){
+	HAL_GPIO_WritePin(PIN4_GPIO_Port, PIN4_Pin,SET);
+		HAL_GPIO_WritePin(PIN5_GPIO_Port, PIN5_Pin,SET);
+		HAL_GPIO_WritePin(PIN6_GPIO_Port, PIN6_Pin,SET);
+		HAL_GPIO_WritePin(PIN7_GPIO_Port, PIN7_Pin,SET);
+		HAL_GPIO_WritePin(PIN8_GPIO_Port, PIN8_Pin,SET);
+		HAL_GPIO_WritePin(PIN9_GPIO_Port, PIN9_Pin,SET);
+		HAL_GPIO_WritePin(PIN10_GPIO_Port, PIN10_Pin,SET);
+		HAL_GPIO_WritePin(PIN11_GPIO_Port, PIN11_Pin,SET);
+		HAL_GPIO_WritePin(PIN12_GPIO_Port, PIN12_Pin,SET);
+		HAL_GPIO_WritePin(PIN13_GPIO_Port, PIN13_Pin,SET);
+		HAL_GPIO_WritePin(PIN14_GPIO_Port, PIN14_Pin,SET);
+		HAL_GPIO_WritePin(PIN15_GPIO_Port, PIN15_Pin,SET);
+}
 void clearAllClock(){
 	HAL_GPIO_WritePin(PIN4_GPIO_Port, PIN4_Pin,RESET);
 	HAL_GPIO_WritePin(PIN5_GPIO_Port, PIN5_Pin,RESET);
@@ -75,10 +89,63 @@ void clearAllClock(){
 	HAL_GPIO_WritePin(PIN14_GPIO_Port, PIN14_Pin,RESET);
 	HAL_GPIO_WritePin(PIN15_GPIO_Port, PIN15_Pin,RESET);
 }
-void setled(int timer){
+void clearNumberOnClock(int num){
+	switch(num){
+	case 0:
+		HAL_GPIO_WritePin(PIN12_GPIO_Port,
+		PIN12_Pin,RESET);
+		break;
+	case 1:
+		HAL_GPIO_WritePin(PIN13_GPIO_Port,
+		PIN13_Pin,RESET);
+		break;
+	case 2:
+		HAL_GPIO_WritePin(PIN14_GPIO_Port,
+		PIN14_Pin,RESET);
+		break;
+	case 3:
+		HAL_GPIO_WritePin(PIN15_GPIO_Port,
+		PIN15_Pin,RESET);
+		break;
+	case 4:
+		HAL_GPIO_WritePin(PIN4_GPIO_Port,
+		PIN4_Pin,RESET);
+		break;
+	case 5:
+		HAL_GPIO_WritePin(PIN5_GPIO_Port,
+		PIN5_Pin,RESET);
+		break;
+	case 6:
+		HAL_GPIO_WritePin(PIN6_GPIO_Port,
+		PIN6_Pin,RESET);
+		break;
+	case 7:
+		HAL_GPIO_WritePin(PIN7_GPIO_Port,
+		PIN7_Pin,RESET);
+		break;
+	case 8:
+		HAL_GPIO_WritePin(PIN8_GPIO_Port,
+		PIN8_Pin,RESET);
+		break;
+	case 9:
+		HAL_GPIO_WritePin(PIN9_GPIO_Port,
+		PIN9_Pin,RESET);
+		break;
+	case 10:
+		HAL_GPIO_WritePin(PIN10_GPIO_Port,
+		PIN10_Pin,RESET);
+		break;
+	case 11:
+		HAL_GPIO_WritePin(PIN11_GPIO_Port,
+		PIN11_Pin,RESET);
+		break;
+	default:
+		clearAllClock();
+    	}
+    }
+void setNumberOnClock(int timer){
 	switch(timer){
 	case 0:
-		clearAllClock();
 		HAL_GPIO_WritePin(PIN12_GPIO_Port, PIN12_Pin,SET);
 		break;
 	case 1:
@@ -115,7 +182,7 @@ void setled(int timer){
 			HAL_GPIO_WritePin(PIN11_GPIO_Port, PIN11_Pin,SET);
 			break;
 	default:
-		clearAllClock();
+		setAllClock();
 	}
 }
 int main(void)
@@ -148,19 +215,36 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int timer = 0;
+
+  //GET TIME
+  int sec = 55;
+  int min = 59;
+  int hour = 5;
 
 	//SET ALL Segments off
   clearAllClock();
 	//START LOOP
   while (1)
   {
-	  if(timer<12){
-		  setled(timer);
-		  timer+=1;
+	  clearNumberOnClock((sec-5)/5);
+	  if(sec<60){
+		  setNumberOnClock(sec/5);
+		  setNumberOnClock(min/5);
+		  setNumberOnClock(hour);
+		  sec+=1;
 	  }
-	  if(timer>=12){
-		  timer = 0;
+	  if(sec>=60){
+		  sec = 0;
+		  clearNumberOnClock(min/5);
+		  min+=1;
+	  }
+	  if(min>=60){
+		  min = 0;
+		  clearNumberOnClock(hour);
+		  hour += 1;
+	  }
+	  if(hour>=12){
+		  hour=0;
 	  }
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
