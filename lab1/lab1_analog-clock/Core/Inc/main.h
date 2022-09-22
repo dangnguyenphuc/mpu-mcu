@@ -58,30 +58,46 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define PIN4_Pin GPIO_PIN_4
-#define PIN4_GPIO_Port GPIOA
-#define PIN5_Pin GPIO_PIN_5
-#define PIN5_GPIO_Port GPIOA
-#define PIN6_Pin GPIO_PIN_6
-#define PIN6_GPIO_Port GPIOA
-#define PIN7_Pin GPIO_PIN_7
-#define PIN7_GPIO_Port GPIOA
-#define PIN8_Pin GPIO_PIN_8
-#define PIN8_GPIO_Port GPIOA
-#define PIN9_Pin GPIO_PIN_9
-#define PIN9_GPIO_Port GPIOA
-#define PIN10_Pin GPIO_PIN_10
-#define PIN10_GPIO_Port GPIOA
-#define PIN11_Pin GPIO_PIN_11
-#define PIN11_GPIO_Port GPIOA
-#define PIN12_Pin GPIO_PIN_12
-#define PIN12_GPIO_Port GPIOA
-#define PIN13_Pin GPIO_PIN_13
-#define PIN13_GPIO_Port GPIOA
-#define PIN14_Pin GPIO_PIN_14
-#define PIN14_GPIO_Port GPIOA
-#define PIN15_Pin GPIO_PIN_15
-#define PIN15_GPIO_Port GPIOA
+#define PINA_1_Pin GPIO_PIN_4
+#define PINA_1_GPIO_Port GPIOA
+#define PINA_2_Pin GPIO_PIN_5
+#define PINA_2_GPIO_Port GPIOA
+#define PINA_3_Pin GPIO_PIN_6
+#define PINA_3_GPIO_Port GPIOA
+#define PINA_4_Pin GPIO_PIN_7
+#define PINA_4_GPIO_Port GPIOA
+#define PINB_0_Pin GPIO_PIN_0
+#define PINB_0_GPIO_Port GPIOB
+#define PINB_1_Pin GPIO_PIN_1
+#define PINB_1_GPIO_Port GPIOB
+#define PINB_2_Pin GPIO_PIN_2
+#define PINB_2_GPIO_Port GPIOB
+#define PINB_10_Pin GPIO_PIN_10
+#define PINB_10_GPIO_Port GPIOB
+#define PINB_11_Pin GPIO_PIN_11
+#define PINB_11_GPIO_Port GPIOB
+#define PINB_12_Pin GPIO_PIN_12
+#define PINB_12_GPIO_Port GPIOB
+#define PINB_13_Pin GPIO_PIN_13
+#define PINB_13_GPIO_Port GPIOB
+#define PINA_5_Pin GPIO_PIN_8
+#define PINA_5_GPIO_Port GPIOA
+#define PINA_6_Pin GPIO_PIN_9
+#define PINA_6_GPIO_Port GPIOA
+#define PINB_3_Pin GPIO_PIN_3
+#define PINB_3_GPIO_Port GPIOB
+#define PINB_4_Pin GPIO_PIN_4
+#define PINB_4_GPIO_Port GPIOB
+#define PINB_5_Pin GPIO_PIN_5
+#define PINB_5_GPIO_Port GPIOB
+#define PINB_6_Pin GPIO_PIN_6
+#define PINB_6_GPIO_Port GPIOB
+#define PINB_7_Pin GPIO_PIN_7
+#define PINB_7_GPIO_Port GPIOB
+#define PINB_8_Pin GPIO_PIN_8
+#define PINB_8_GPIO_Port GPIOB
+#define PINB_9_Pin GPIO_PIN_9
+#define PINB_9_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
