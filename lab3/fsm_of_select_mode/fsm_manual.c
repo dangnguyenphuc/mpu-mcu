@@ -23,6 +23,11 @@ void fsm_manual_run(){
 				if(red_time>99) red_time = 1;
 			}
 
+			if(is_button_pressed_1s(1)==1){
+				red_time = red_time - 1;
+				if(red_time<=0) red_time = 99;
+			}
+
 			displayNum1(red_time);
 
 			displayNum2(status_3-SET_RED+2);
@@ -53,6 +58,11 @@ void fsm_manual_run(){
 				if(yellow_time>99) yellow_time = 1;
 			}
 
+			if(is_button_pressed_1s(1)==1){
+				yellow_time = yellow_time - 1;
+				if(yellow_time<=0) yellow_time = 99;
+			}
+
 
 			// CHANGE STATE
 
@@ -77,6 +87,11 @@ void fsm_manual_run(){
 			if(is_button_pressed(1)==1){
 				green_time+=1;
 				if(green_time>99) green_time = 1;
+			}
+
+			if(is_button_pressed_1s(1)==1){
+				green_time = green_time - 1;
+				if(green_time<=0) green_time = 99;
 			}
 
 

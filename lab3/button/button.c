@@ -18,12 +18,10 @@ static GPIO_PinState debounceButtonBuffer2[NO_OF_BUTTONS];
 static GPIO_PinState debounceButtonBuffer0[NO_OF_BUTTONS];
 
 
-static int flagForButtonPressed[NO_OF_BUTTONS] = {0,0,0};
-static int flagForButtonPressed1s[NO_OF_BUTTONS]= {0,0,0};
-static int counterForButtonPressed1s[NO_OF_BUTTONS]= {0,0,0};
+static int flagForButtonPressed[NO_OF_BUTTONS] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
+static int flagForButtonPressed1s[NO_OF_BUTTONS]= {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
+static int counterForButtonPressed1s[NO_OF_BUTTONS]= {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 
-
-int TimeOutForKeyPress =  100;
 
 GPIO_PinState iKeyInput(int index){
 	switch(index){
@@ -63,9 +61,11 @@ void getKeyInput(){
 				}
 			}else{
 				counterForButtonPressed1s[i]--;
-				if(debounceButtonBuffer2[i]==PRESSED_STATE){
-					subKeyProcess2(i);
-					counterForButtonPressed1s[i] = DURATION_FOR_AUTO_INCREASING;
+				if(counterForButtonPressed1s[i] <= 0){
+					if(debounceButtonBuffer2[i]==PRESSED_STATE){
+						subKeyProcess2(i);
+					}
+				counterForButtonPressed1s[i] = DURATION_FOR_AUTO_INCREASING;
 				}
 			}
 		}
