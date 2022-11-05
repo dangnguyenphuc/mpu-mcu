@@ -26,6 +26,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 
@@ -34,11 +35,13 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 				if( is_button_pressed(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
@@ -48,6 +51,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 
@@ -56,11 +60,13 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 				if( is_button_pressed_3s(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
@@ -87,6 +93,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 				}
@@ -94,12 +101,14 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 					// If 3rd button pressed then reset
 				if( is_button_pressed(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
@@ -109,6 +118,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 
@@ -117,11 +127,13 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 				if( is_button_pressed_3s(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
@@ -148,6 +160,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 				}
@@ -155,12 +168,14 @@ void fsm_simple_button_run(){
 				if( is_button_pressed(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 					// If 3rd button pressed then reset
 				if( is_button_pressed(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
@@ -170,6 +185,7 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(0) ){
 					counter += 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = INCREASE;
 
@@ -178,11 +194,13 @@ void fsm_simple_button_run(){
 				if( is_button_pressed_3s(1) ){
 					counter -= 1;
 					check_counter();
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = DECREASE;
 				}
 				if( is_button_pressed_3s(2) ){
 					counter = 0;
+					setTimer5(EXPIRED_BUTTON_DURATION);
 
 					status = RESET_STATE;
 				}
