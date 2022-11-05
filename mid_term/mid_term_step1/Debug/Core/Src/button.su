@@ -1,0 +1,8 @@
+button.c:29:15:iKeyInput	16	static
+button.c:42:6:subKeyProcess1	16	static
+button.c:55:6:subKeyProcess2	16	static
+button.c:59:6:getKeyInput	16	static
+button.c:101:15:is_button_pressed	16	static
+button.c:111:15:is_button_pressed_3s	16	static
+button.c:122:15:is_button_double_click	16	static
+button.c:133:6:check_counter	4	static
