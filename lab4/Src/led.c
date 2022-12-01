@@ -142,3 +142,13 @@ void clearLED(){
 }
 
 
+void toggleWhenPressed(){
+	if(is_button_pressed(0)){
+		HAL_GPIO_TogglePin(A7_GPIO_Port, A7_Pin);
+	}
+}
+
+void toggleOneShot(){
+	HAL_GPIO_TogglePin(A8_GPIO_Port, A8_Pin);
+}
+

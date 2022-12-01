@@ -20,6 +20,8 @@ void clearLight();
 void displayNum();
 void clearLED();
 
+void toggleWhenPressed();
 
+void toggleOneShot();
 
 #endif /* INC_LED_H_ */

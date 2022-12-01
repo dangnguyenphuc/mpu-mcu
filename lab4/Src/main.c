@@ -19,11 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "global.h"
-#include "scheduler.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "global.h"
+#include "scheduler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,19 +97,24 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   SCH_Init();
 
-  SCH_Add_Task(add_counter, 0, 50);
-  SCH_Add_Task(displayNum, 0, 100);
+  SCH_Add_Task(getKeyInput, 0, 1, 0);
+  SCH_Add_Task(toggleWhenPressed, 0,1,0);
 
-  SCH_Add_Task(toggleRed, 150, 150);
-  SCH_Add_Task(toggleYellow, 200, 200);
-  SCH_Add_Task(toggleGreen, 250, 250);
+  SCH_Add_Task(add_counter, 100, 100,0);
+  SCH_Add_Task(displayNum, 100, 100,0);
 
+  SCH_Add_Task(toggleOneShot, 100, 100, 1);
+
+  SCH_Add_Task(toggleRed, 150, 150,0);
+  SCH_Add_Task(toggleYellow, 200, 200,0);
+  SCH_Add_Task(toggleGreen, 250, 250,0);
 
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
 	  SCH_Dispatch_Tasks();
   }
   /* USER CODE END 3 */
@@ -209,20 +214,23 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, A4_Pin|A5_Pin|A6_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, A2_Pin|A3_Pin|A4_Pin|A5_Pin
+                          |A6_Pin|A7_Pin|A8_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, B0_Pin|B1_Pin|B2_Pin|B3_Pin
                           |B4_Pin|B5_Pin|B6_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : A0_Pin A1_Pin A2_Pin */
-  GPIO_InitStruct.Pin = A0_Pin|A1_Pin|A2_Pin;
+  /*Configure GPIO pins : A0_Pin A1_Pin */
+  GPIO_InitStruct.Pin = A0_Pin|A1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : A4_Pin A5_Pin A6_Pin */
-  GPIO_InitStruct.Pin = A4_Pin|A5_Pin|A6_Pin;
+  /*Configure GPIO pins : A2_Pin A3_Pin A4_Pin A5_Pin
+                           A6_Pin A7_Pin A8_Pin */
+  GPIO_InitStruct.Pin = A2_Pin|A3_Pin|A4_Pin|A5_Pin
+                          |A6_Pin|A7_Pin|A8_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
