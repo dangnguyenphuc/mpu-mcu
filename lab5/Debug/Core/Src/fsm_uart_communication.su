@@ -1,0 +1,3 @@
+fsm_uart_communication.c:11:15:Receiving_RESET	4	static
+fsm_uart_communication.c:18:15:Receiving_OK	4	static
+fsm_uart_communication.c:26:6:uart_communication	8	static
